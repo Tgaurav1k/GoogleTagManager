@@ -57,6 +57,9 @@
     </div>
     <script>
         document.getElementById('addToCartBtn').addEventListener('click', function() {
+            if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                window.dataLayer.push({ event: 'add_to_cart_click' });
+            }
             alert('card added successfully');
         });
         document.getElementById("purchaseTagBtn").addEventListener("click", function(){
